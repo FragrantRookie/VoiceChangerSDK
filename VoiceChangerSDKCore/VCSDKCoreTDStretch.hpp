@@ -13,7 +13,7 @@
 #include <stddef.h>
 #include "VCSDKCoreType.h"
 #include "VCSDKCoreRateTransposer.hpp"
-#include "VCSDKCoreFIFOSamplePipe.hpp"
+#include "VCSDKCoreFIFOSamplePipe.h"
 
 
 namespace vcsdkcore {

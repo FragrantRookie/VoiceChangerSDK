@@ -12,7 +12,7 @@
 #include <stdio.h>
 
 
-#include "VCSDKCore.hpp"
+#include "VCSDKCore.h"
 #include "VCSDKCoreTDStretch.hpp"
 #include "VCSDKCoreRateTransposer.hpp"
 #include "VCSDKCoreCpu_detect.h"

@@ -12,7 +12,7 @@
 
 #include <stddef.h>
 #include "VCSDKCoreAAFilter.hpp"
-#include "VCSDKCoreFIFOSamplePipe.hpp"
+#include "VCSDKCoreFIFOSamplePipe.h"
 #include "VCSDKCoreFIFOSampleBuffer.hpp"
 
 #include "VCSDKCoreType.h"

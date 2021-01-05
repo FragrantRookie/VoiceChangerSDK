@@ -9,10 +9,10 @@
  *
  */
 
-#ifndef VCSDKCore_hpp
-#define VCSDKCore_hpp
+#ifndef VCSDKCore_h
+#define VCSDKCore_h
 
-#include "VCSDKCoreFIFOSamplePipe.hpp"
+#include "VCSDKCoreFIFOSamplePipe.h"
 #include "VCSDKCoreType.h"
 
 

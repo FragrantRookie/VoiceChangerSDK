@@ -13,13 +13,11 @@
  */
 
 
-#ifndef VoiceChangerSDKPublic_hpp
-#define VoiceChangerSDKPublic_hpp
+#ifndef VOICECHANGERSDKPUBLIC_H // VoiceChangerSDKPublic_h
+#define VOICECHANGERSDKPUBLIC_H // VoiceChangerSDKPublic_h
 
 
-#include "VCSDKCore.hpp"
-
-
+#include "VCSDKCore.h"
 
 
 class VoiceChangerSDKPublic {
@@ -42,12 +40,7 @@ public:
 
     
     // 2. 读取文件read file to get SampleBuffer
-    void readFileToVoiceChanger(char *filepath);
-    
-    
-    
-    
-    
+    void readFileToVoiceChanger(char *originAudioPath,char *outAudioPath);
     
     
 // 变声种类选择

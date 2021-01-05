@@ -8,7 +8,7 @@
 #ifndef VCSDKCoreFIFOSampleBuffer_hpp
 #define VCSDKCoreFIFOSampleBuffer_hpp
 
-#include "VCSDKCoreFIFOSamplePipe.hpp"
+#include "VCSDKCoreFIFOSamplePipe.h"
 
 
 namespace vcsdkcore {
