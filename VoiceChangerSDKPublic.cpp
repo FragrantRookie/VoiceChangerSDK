@@ -22,7 +22,7 @@ VoiceChangerSDKPublic::VoiceChangerSDKPublic() {
     //_vcsdkCore->setSampleRate(8000); //
     _vcsdkCore->setSampleRate(44100);
     _vcsdkCore->setChannels(1);
-
+    
 
 
     // set default
@@ -78,14 +78,70 @@ void VoiceChangerSDKPublic::funnySound() {
 void VoiceChangerSDKPublic::littleYellowSound() {
     _vcsdkCore->setPitchSemiTones(8);
     _vcsdkCore->setTempo(1);
-    _vcsdkCore->setRateChange(120);
+    _vcsdkCore->setRateChange(100);
 }
+
+/** 5. 慢吞吞
+ * 语速放慢2-3倍--setTempo
+ *  appear clip play content.
+ */
+void VoiceChangerSDKPublic::slowlySound() {
+    _vcsdkCore->setPitch(1);
+    //_vcsdkCore->setTempo(0.4); // M1
+    _vcsdkCore->setTempoChange(-50); // M2
+    _vcsdkCore->setRate(1.0);
+}
+
+/** 6. 怪兽
+ * 调低半个音调==>pitch=-1.0
+ *
+ */
+void VoiceChangerSDKPublic::monsterSound() {
+    _vcsdkCore->setPitchOctaves(-1.0);
+    _vcsdkCore->setTempo(1.0);
+    _vcsdkCore->setRate(1.0);
+}
+
+/** 7. 重机械
+ * 相较于怪兽音~~类似,调低pitch=-0.5
+ *
+ */
+void VoiceChangerSDKPublic::heavyMachinery() {
+    _vcsdkCore->setPitchOctaves(-0.5);
+    _vcsdkCore->setTempo(1.0);
+    _vcsdkCore->setRate(1.0);
+}
+
+/** 8. 快速说
+ * 提高tempo
+ * appear redundant content.
+ */
+void VoiceChangerSDKPublic::quicklySaySound() {
+    _vcsdkCore->setPitch(1.0);
+    _vcsdkCore->setTempo(3.0); // 速度快
+    _vcsdkCore->setRate(1.0);
+
+}
+
+
+// remaind code
+/*test  test */
+void testNewSound() {
+    //_vcsdkCore->setPitch(1.0);
+    //_vcsdkCore->setTempoChange(100);
+    //_vcsdkCore->setRate(1.0);
+}
+
+// 机器人音效 -- 机器人的音效是一个组合效果，，音调比较高，而且有重音.音调延迟
+
+// 惊悚音
+
+
 
 
 // --- --- ---
 /** 1. 实时输入CSSampleBuffer数据处理
  * putSamples输入,receiveSamples输出处理后的sampleBuffer。
- */
 // 往ST中输入buffer
 void VoiceChangerSDKPublic::putSamples(const short *samples,uint length) {
     _vcsdkCore->putSamples(samples, length);
@@ -94,12 +150,12 @@ void VoiceChangerSDKPublic::putSamples(const short *samples,uint length) {
 void VoiceChangerSDKPublic::receiveSample(short *buffer,uint length) {
     _vcsdkCore->receiveSamples(buffer,length);
 }
+ */
 
 
 /** 2. 读取文件get SampleBuffer
  *
  */
-
 void wavWrite_s16(char *filename, int16_t *buffer, int sampleRate, uint32_t totalSampleCount) {
     drwav_data_format format;
     format.container = drwav_container_riff;     // <-- drwav_container_riff = normal WAV files, drwav_container_w64 = Sony Wave64.
@@ -139,7 +195,9 @@ int16_t *wavRead_s16(char *filename, uint32_t *sampleRate, uint64_t *totalSample
 }
 
 
-void VoiceChangerSDKPublic::readFileToVoiceChanger(char *originAudioPath,char *outAudioPath) {
+bool VoiceChangerSDKPublic::readFileToVoiceChanger(char *originAudioPath,char *outAudioPath) {
+    
+    bool isGenerateOutFile = false;
     
     // ** 需要判断outAudioPath是否已经存在，存在则删除 ** 
     FILE *file = fopen(outAudioPath, "r");
@@ -170,11 +228,13 @@ void VoiceChangerSDKPublic::readFileToVoiceChanger(char *originAudioPath,char *o
 
     } while (numSamples>0);
     
-    wavWrite_s16(outAudioPath, samples, sampleRate, totalSampleCount);
+    isGenerateOutFile = true;
     
+    wavWrite_s16(outAudioPath, samples, sampleRate, totalSampleCount);
     
     delete [] samples;
     
+    return isGenerateOutFile;
 }
 
 

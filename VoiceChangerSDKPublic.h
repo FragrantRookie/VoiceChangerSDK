@@ -1,4 +1,4 @@
-////  VoiceChangerSDKPublic.hpp
+////  VoiceChangerSDKPublic.h
 //  VoiceChangerCFramework
 //
 //  Created on 2021/1/4.
@@ -33,17 +33,7 @@ public:
     VoiceChangerSDKPublic();
     virtual ~VoiceChangerSDKPublic();
     
-    
-    // 1.  实时SampleBuffer==>数据处理，
-    void putSamples(const short *samples,uint length);
-    void receiveSample(short *buffer,uint length);
-
-    
-    // 2. 读取文件read file to get SampleBuffer
-    void readFileToVoiceChanger(char *originAudioPath,char *outAudioPath);
-    
-    
-// 变声种类选择
+    // 变声种类选择
     // 1. 萝莉音
     void luoliSound();
     
@@ -56,12 +46,21 @@ public:
     // 4. 小黄人音
     void littleYellowSound();
     
+    // 5. 慢吞吞
+    void slowlySound();
     
-    // 5. 机器人音效 -- 机器人的音效是一个组合效果，，音调比较高，而且有重音.音调延迟
+    // 6. 怪兽
+    void monsterSound();
     
+    // 7. 重机型
+    void heavyMachinery();
     
-    // 6. 惊悚音
+    // 8. 快速说
+    void quicklySaySound();
+
     
+    // 读取文件read file to get SampleBuffer
+    bool readFileToVoiceChanger(char *originAudioPath,char *outAudioPath);
     
 };
 

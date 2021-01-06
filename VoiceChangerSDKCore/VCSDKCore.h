@@ -123,6 +123,13 @@ public:
     virtual ~VCSDKCore();
     
 
+    /** Pitch -- 设置音调，声音高低。
+     *  tempo -- 音频频率，声音拉长。
+     *  rate -- 语速，声音速度。
+     *
+     */
+    
+    
     /// Get SoundTouch library version string
     static const char *getVersionString();
 
@@ -142,7 +149,7 @@ public:
     /// Sets new rate control value as a difference in percents compared
     /// to the original rate (-50 .. +100 %) -- 设置声音的速率
     void setRateChange(float newRate);
-
+    
     /// Sets new tempo control value as a difference in percents compared
     /// to the original tempo (-50 .. +100 %) -- 变速不变调
     void setTempoChange(float newTempo);
@@ -150,16 +157,17 @@ public:
     /// Sets new pitch control value. Original pitch = 1.0, smaller values
     /// represent lower pitches, larger values higher pitch. -- 指定音调值，原始值为1.0
     void setPitch(float newPitch);
-
+    
     /// Sets pitch change in octaves（八度） compared to the original pitch
     /// (-1.00 .. +1.00) -- 在原音调基础上以八度音为单位进行调整，取值为[-1.00,+1.00]
     void setPitchOctaves(float newPitch);
-
+    
     /// Sets pitch change in semi-tones（半音音高） compared to the original pitch
     /// (-12 .. +12) -- 设置声音的pitch --  在原音调基础上以半音为单位进行调整，取值为[-12,+12]
     void setPitchSemiTones(int newPitch);
     void setPitchSemiTones(float newPitch);
 
+    
     /// Sets the number of channels, 1 = mono, 2 = stereo -- 设置声音的声道
     void setChannels(uint numChannels);
 
