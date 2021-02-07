@@ -52,7 +52,7 @@ public:
     // 6. 怪兽
     void monsterSound();
     
-    // 7. 重机型
+    // 7. 重机械
     void heavyMachinery();
     
     // 8. 快速说
@@ -61,6 +61,12 @@ public:
     
     // 读取文件read file to get SampleBuffer
     bool readFileToVoiceChanger(char *originAudioPath,char *outAudioPath);
+    
+    
+    // update version -- 每个变声种类功能
+    
+    
+    
     
 };
 

@@ -20,7 +20,7 @@ VoiceChangerSDKPublic::VoiceChangerSDKPublic() {
 
     //
     //_vcsdkCore->setSampleRate(8000); //
-    _vcsdkCore->setSampleRate(44100);
+    _vcsdkCore->setSampleRate(44100); // 采样频率不应该超过48KHZ,44100相当于CD音质了，8000电话的采样频率。
     _vcsdkCore->setChannels(1);
     
 

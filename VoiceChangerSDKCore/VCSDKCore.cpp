@@ -77,7 +77,7 @@ uint VCSDKCore::getVersionId()
 }
 
 
-// Sets the number of channels, 1 = mono, 2 = stereo
+// Sets the number of channels, 1 = mono(单声道), 2 = stereo(立体声)
 void VCSDKCore::setChannels(uint numChannels)
 {
     /*if (numChannels != 1 && numChannels != 2)
