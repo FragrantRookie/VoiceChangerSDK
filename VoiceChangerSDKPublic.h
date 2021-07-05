@@ -30,6 +30,16 @@ private:
 
 public:
     
+    /** 接入方法如下：
+     *
+     *  1、初始化变声管理类 "VoiceChangerSDKPublic"，全局变量。
+     *  2、使用对象方法调用；下面方法;先进行相应的变声种类参数配置。
+     *  3、传入原音频文件".wav"格式路径(pcm原始音频数据文件暂未兼容),及存储变声音频全路径需含有".wav"后缀名。
+     *  4、此SDK实现以及方法使用，为串行，同步执行，不存在异步等待调用问题。
+     *
+     */
+    
+    
     VoiceChangerSDKPublic();
     virtual ~VoiceChangerSDKPublic();
     
@@ -64,9 +74,6 @@ public:
     
     
     // update version -- 每个变声种类功能
-    
-    
-    
     
 };
 
